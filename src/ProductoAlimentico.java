@@ -8,6 +8,6 @@ public class ProductoAlimentico extends Producto {
 
     @Override
     public double calcularPrecio() {
-        return getPreciobase() * (1 - descuento);
+        return getPreciobase() * 1.05;
     }
 }
