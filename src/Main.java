@@ -10,8 +10,11 @@ public class Main {
         productos.add(new ProductoRopa("Camisa", 180.0, 0.20));
 
         System.out.println("Sistema de productos");
+        double total=0;
         for (Producto producto : productos) {
             System.out.println(producto.getNombre() + " - Precio final: Q" + producto.calcularPrecio());
+            total += producto.calcularPrecio();
         }
+        System.out.println("Total: Q" + total);
     }
 }
