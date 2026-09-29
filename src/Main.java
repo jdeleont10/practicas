@@ -2,19 +2,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
-        List<Producto> productos = new ArrayList<>();
+    void main() {
+        List<CuentaBancaria> cuentas = new ArrayList<>();
 
-        productos.add(new ProductoAlimentico("Yogur", 120.0, 0.10));
-        productos.add(new ProductoElectronico("Auriculares", 250.0, 0.12));
-        productos.add(new ProductoRopa("Camisa", 180.0, 0.20));
+        cuentas.add(new CuentaAhorro("Juan Pérez", 1000.0, 1.5, "Ahorro"));
+        cuentas.add(new CuentaCorriente("María López", 500.0, 10.0, "Corriente"));
+        cuentas.add(new CuentaPlazoFijo("Carlos García", 2000.0, "Plazo Fijo", 2.0, 12));
 
-        System.out.println("Sistema de productos");
-        double total=0;
-        for (Producto producto : productos) {
-            System.out.println(producto.getNombre() + " - Precio final: Q" + producto.calcularPrecio());
-            total += producto.calcularPrecio();
+        for (CuentaBancaria cuenta : cuentas) {
+            cuenta.mostrarInformacion();
+            cuenta.calcularBeneficioMensual();
+
+            System.out.println();
         }
-        System.out.println("Total: Q" + total);
     }
+
 }
